@@ -1,0 +1,54 @@
+<!--
+  Generated template for the AddcompaniesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- Define Navigation Bar -->
+<ion-header>
+  <!-- use ion-toolbar for a normal toolbar and ion-navbar for navigation -->
+  <ion-toolbar>
+    <ion-buttons left clear>
+      <button (click)="onBack()" style="background-color:transparent">
+        <ion-icon class="ion-icon" name="arrow-round-back" color="light"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Companies
+    </ion-title>
+    <ion-buttons right>
+    
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+
+<!-- Controls --> 
+<ion-content padding>
+
+  <ion-row>
+    <ion-input class="ion-input" block type="text" placeholder="Company Api Url" [(ngModel)]="companyApiUrl" name="companyApiUrl" ></ion-input>
+  </ion-row>
+  <ion-label stacked>Company Api Url</ion-label>
+  <button class="button_style" ion-button block color="button-color" (click)="loadCompanies()">Load Companies</button>
+
+  <ion-list>
+    <ion-item *ngFor="let company of companies" class="item_background">
+        <ion-row>
+          <ion-col>
+              <h2 style="color:aliceblue; margin-top:5px">{{company.description}}</h2>
+          </ion-col>
+          <ion-col>
+              <ion-buttons right clear>
+                  <button (click)="onBack()" style="background-color:transparent">
+                    <ion-icon class="ion-icon" name="md-add-circle" color="light"></ion-icon>
+                  </button>
+                </ion-buttons>
+            </ion-col>
+        </ion-row>
+     
+     
+    </ion-item>
+  </ion-list>
+</ion-content>
